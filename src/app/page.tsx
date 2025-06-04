@@ -2,20 +2,7 @@
 import React from "react";
 import InstagramPhoneEmbed from "./InstagramPhoneEmbed";
 
-async function getLatestReel() {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/instagram`, { next: { revalidate: 3600 } });
-    const data = await response.json();
-    return data.reelId;
-  } catch (error) {
-    console.error('Error fetching reel:', error);
-    return null;
-  }
-}
-
-export default async function Home() {
-  const reelId = await getLatestReel();
-
+export default function Home() {
   return (
     <main className="min-h-screen bg-white flex flex-col justify-between">
       <div className="flex flex-col md:flex-row w-full max-w-5xl mx-auto pt-8 pb-16 px-2 md:px-6 flex-1">
@@ -29,7 +16,7 @@ export default async function Home() {
           <div className="space-y-3 text-sm text-black/60 mb-6">
             <div>student @ <a href="https://www.cmu.edu/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">Carnegie Mellon University<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> studying CS & ML.</div>
             <div style={{ padding: '.05rem' }}></div>
-            <div>i've worked on products at <a href="https://www.linkedin.com/company/trypearai/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">PearAI<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> (YC24) and <a href="https://www.springcarnival.org/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">Spring Carnival<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a>, and conducted research at <a href="https://research-innovation.ncssm.edu/research-communication/durham-summer-ri-showcase/srip-showcase-2023/all-2023-projects" className="text-emerald-600 relative group">NC State<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> and <a href="https://openreview.net/forum?id=nWCsJdKoUs" className="text-emerald-600 relative group">Algoverse AI<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a>. </div>
+            <div>I&apos;ve worked on products at <a href="https://www.linkedin.com/company/trypearai/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">PearAI<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> (YC24) and <a href="https://www.springcarnival.org/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">Spring Carnival<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a>, and conducted research at <a href="https://research-innovation.ncssm.edu/research-communication/durham-summer-ri-showcase/srip-showcase-2023/all-2023-projects" className="text-emerald-600 relative group">NC State<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> and <a href="https://openreview.net/forum?id=nWCsJdKoUs" className="text-emerald-600 relative group">Algoverse AI<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a>. </div>
             <div style={{ padding: '.05rem' }}></div>
             <div>interested in startups, tech, and <a href="https://www.instagram.com/rojeru/" className="text-emerald-600 relative group" target="_blank" rel="noopener noreferrer">content<span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded" aria-hidden="true" /></a> (90k+)</div>
           </div>
