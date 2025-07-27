@@ -27,8 +27,8 @@ export default function Home() {
         <div className="flex justify-center gap-8 text-sm">
           {[
             { href: "https://linkedin.com/in/roger-you-b09bb0282", label: "LinkedIn" },
-            { href: undefined, label: "Resume" },
             { href: "https://github.com/rogeru13", label: "GitHub" },
+            { href: "https://x.com/rojeru_", label: "X" },
             { href: "mailto:rogeryou@andrew.cmu.edu", label: "Email" },
           ].map((link, idx) => (
             <a
